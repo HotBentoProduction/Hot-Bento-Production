@@ -1,7 +1,8 @@
 # Hot-Bento-Production
 RPG Turn-based combat game.
 
-SET-UP DEL PROGETTO
+
+#SET-UP DEL PROGETTO#
 
 Per caricare file di dimensioni maggiori di 100 MB (dimensione massima consentita da Github) è necessario caricarli tramite CMD e usare Github Desktop, l'applicazione apposita di Github. è necessario usare entrambe per caricare simili file correttamente.
 Il CMD in windows può essere aperto cercando la parola chiave CMD nella barra di "Cerca" di windows o con click del tasto destro del mouse in una folder qualsiasi di esplorare risorse, compreso il desktop.
