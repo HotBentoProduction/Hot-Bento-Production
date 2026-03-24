@@ -1,0 +1,28 @@
+
+RICORDATI I NOMI, LA MAGGIOR PARTE DELLE COSE FUNZIONA USANDO IL LORO NOME QUINDI BISOGNA ESSERE PRECISI
+
+Controlla se hai messo i get array corretti ovunque
+
+Nella Widget_InventorySlot e Widget_InventoryScreen manca la parte per rendere di colore diverso item di rarità diversi
+
+Fatta la classe TargetingManager, tornare nella widget "WBP_JRPG_ActionsWidget" del progetto di reference e finire la parte del onButtonPressed nel grafico nella nostra rispettiva classe ("Widget_ActionPanel")
+
+Nel battle manager se serve avere nemici nell'overworld bisogna fare la funzione GetWorldEnemiesTransforms
+
+In AC_CharacterBattleStat nella parte del receive damage manca la parte finale della morte del personaggio e del danno ricevuto da fare dopo aver fatto BPI_BattleComunication
+
+
+
+In BaseRPGCharacter mancano gli elementi scenografici (popup del danno e cose del genere) nel grafico delle interfacce
+
+Nell'InventoryManager serve aggiungere quando sarà necessario la parte dell'equipaggiamento
+
+Aggiungere i vendor
+
+Per implementare il controller bisogna andare a controllare un po' ovunque, non credo di riuscirlo a implementare per la fine di ottobre considerando che non è di sicuro un elemento fondamentale per il funzionamento del progetto al momento, ovviamente più avanti servirà
+
+Se vogliamo aggiungere righe e colonne di nemici bisogna riandare a vedere una buona parte del progetto (cerco di scrivere tutte le parti dove serve):
+Targeting manager
+GetProperSpawnPoint (AC_BattleManager)
+
+Bisogna levare la parte iniziale del begin play del CharacterManager appena implementiamo la schermata iniziale
