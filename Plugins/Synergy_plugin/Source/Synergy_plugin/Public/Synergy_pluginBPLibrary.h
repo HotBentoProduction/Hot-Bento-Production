@@ -16,14 +16,14 @@ enum class EIngredientType : uint8
 	Carota UMETA(DisplayName = "Carota"),
 	Cipolla UMETA(DisplayName = "Cipolla"),
 	Cozze UMETA(DisplayName = "Cozze"),
+	Parmigiano UMETA(DisplayName = "Parmigiano"),
 	Funghi UMETA(DisplayName = "Funghi"),
 	Gamberi UMETA(DisplayName = "Gamberi"),
 	Gorgonzola UMETA(DisplayName = "Gorgonzola"),
-	Noci UMETA(DisplayName = "Noci"),
 	Limone UMETA(DisplayName = "Limone"),
 	Melanzane UMETA(DisplayName = "Melanzane"),
+	Noci UMETA(DisplayName = "Noci"),
 	Olive UMETA(DisplayName = "Olive"),
-	Parmigiano UMETA(DisplayName = "Parmigiano"),
 	Patate UMETA(DisplayName = "Patate"),
 	Pecorino UMETA(DisplayName = "Pecorino"),
 	Pepe UMETA(DisplayName = "Pepe"),
@@ -32,8 +32,8 @@ enum class EIngredientType : uint8
 	Pomodoro UMETA(DisplayName = "Pomodoro"),
 	Prezzemolo UMETA(DisplayName = "Prezzemolo"),
 	Sarde UMETA(DisplayName = "Sarde"),
-	Uova UMETA(DisplayName = "Uova"),
 	Vongole UMETA(DisplayName = "Vongole"),
+	Uova UMETA(DisplayName = "Uova"),
 	Zucchine UMETA(DisplayName = "Zucchine")
 };
 
