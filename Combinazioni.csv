@@ -1,0 +1,326 @@
+...,Ingredient A,Ingredient B,Score
+1,Aglio,Aglio,0
+2,Aglio,Basilico,1
+3,Aglio,Carne,2
+4,Aglio,Carota,1
+5,Aglio,Cipolla,2
+6,Aglio,Cozze,3
+7,Aglio,Funghi,1
+8,Aglio,Gamberi,-1
+9,Aglio,Gorgonzola,-2
+10,Aglio,Limone,1
+11,Aglio,Melanzane,2
+12,Aglio,Noci,1
+13,Aglio,Olive,2
+14,Aglio,Parmigiano reggiano,-2
+15,Aglio,Patate,2
+16,Aglio,Pecorino romano,-2
+17,Aglio,Pepe,2
+18,Aglio,Peperoncino,2
+19,Aglio,Pinoli,2
+20,Aglio,Pomodoro,3
+21,Aglio,Prezzemolo,2
+22,Aglio,Sarde,2
+23,Aglio,Uova,2
+24,Aglio,Vongole,2
+25,Aglio,Zucchine,2
+26,Basilico,Basilico,0
+27,Basilico,Carne,2
+28,Basilico,Carota,1
+29,Basilico,Cipolla,-1
+30,Basilico,Cozze,-1
+31,Basilico,Funghi,1
+32,Basilico,Gamberi,1
+33,Basilico,Gorgonzola,1
+34,Basilico,Limone,2
+35,Basilico,Melanzane,2
+36,Basilico,Noci,2
+37,Basilico,Olive,2
+38,Basilico,Parmigiano reggiano,2
+39,Basilico,Patate,2
+40,Basilico,Pecorino romano,2
+41,Basilico,Pepe,2
+42,Basilico,Peperoncino,1
+43,Basilico,Pinoli,2
+44,Basilico,Pomodoro,3
+45,Basilico,Prezzemolo,2
+46,Basilico,Sarde,2
+47,Basilico,Uova,2
+48,Basilico,Vongole,2
+49,Basilico,Zucchine,2
+50,Carne,Carne,0
+51,Carne,Carota,2
+52,Carne,Cipolla,2
+53,Carne,Cozze,-6
+54,Carne,Funghi,2
+55,Carne,Gamberi,-6
+56,Carne,Gorgonzola,-1
+57,Carne,Limone,2
+58,Carne,Melanzane,2
+59,Carne,Noci,2
+60,Carne,Olive,2
+61,Carne,Parmigiano reggiano,1
+62,Carne,Patate,2
+63,Carne,Pecorino romano,1
+64,Carne,Pepe,3
+65,Carne,Peperoncino,2
+66,Carne,Pinoli,1
+67,Carne,Pomodoro,1
+68,Carne,Prezzemolo,2
+69,Carne,Sarde,-5
+70,Carne,Uova,1
+71,Carne,Vongole,-6
+72,Carne,Zucchine,2
+73,Carota,Carota,0
+74,Carota,Cipolla,2
+75,Carota,Cozze,2
+76,Carota,Funghi,2
+77,Carota,Gamberi,2
+78,Carota,Gorgonzola,2
+79,Carota,Limone,2
+80,Carota,Melanzane,2
+81,Carota,Noci,2
+82,Carota,Olive,2
+83,Carota,Parmigiano reggiano,1
+84,Carota,Patate,2
+85,Carota,Pecorino romano,2
+86,Carota,Pepe,2
+87,Carota,Peperoncino,2
+88,Carota,Pinoli,2
+89,Carota,Pomodoro,2
+90,Carota,Prezzemolo,2
+91,Carota,Sarde,2
+92,Carota,Uova,2
+93,Carota,Vongole,2
+94,Carota,Zucchine,2
+95,Cipolla,Cipolla,0
+96,Cipolla,Cozze,2
+97,Cipolla,Funghi,2
+98,Cipolla,Gamberi,2
+99,Cipolla,Gorgonzola,-1
+100,Cipolla,Limone,1
+101,Cipolla,Melanzane,2
+102,Cipolla,Noci,1
+103,Cipolla,Olive,2
+104,Cipolla,Parmigiano reggiano,-1
+105,Cipolla,Patate,2
+106,Cipolla,Pecorino romano,-1
+107,Cipolla,Pepe,2
+108,Cipolla,Peperoncino,2
+109,Cipolla,Pinoli,2
+110,Cipolla,Pomodoro,2
+111,Cipolla,Prezzemolo,2
+112,Cipolla,Sarde,2
+113,Cipolla,Uova,1
+114,Cipolla,Vongole,2
+115,Cipolla,Zucchine,2
+116,Cozze,Cozze,0
+117,Cozze,Funghi,2
+118,Cozze,Gamberi,2
+119,Cozze,Gorgonzola,-3
+120,Cozze,Limone,2
+121,Cozze,Melanzane,-1
+122,Cozze,Noci,-2
+123,Cozze,Olive,2
+124,Cozze,Parmigiano reggiano,-3
+125,Cozze,Patate,2
+126,Cozze,Pecorino romano,-3
+127,Cozze,Pepe,2
+128,Cozze,Peperoncino,2
+129,Cozze,Pinoli,1
+130,Cozze,Pomodoro,2
+131,Cozze,Prezzemolo,2
+132,Cozze,Sarde,2
+133,Cozze,Uova,-2
+134,Cozze,Vongole,2
+135,Cozze,Zucchine,2
+136,Funghi,Funghi,0
+137,Funghi,Gamberi,2
+138,Funghi,Gorgonzola,1
+139,Funghi,Limone,1
+140,Funghi,Melanzane,2
+141,Funghi,Noci,2
+142,Funghi,Olive,2
+143,Funghi,Parmigiano reggiano,1
+144,Funghi,Patate,2
+145,Funghi,Pecorino romano,-1
+146,Funghi,Pepe,2
+147,Funghi,Peperoncino,2
+148,Funghi,Pinoli,2
+149,Funghi,Pomodoro,2
+150,Funghi,Prezzemolo,2
+151,Funghi,Sarde,1
+152,Funghi,Uova,2
+153,Funghi,Vongole,2
+154,Funghi,Zucchine,2
+155,Gamberi,Gamberi,0
+156,Gamberi,Gorgonzola,-3
+157,Gamberi,Limone,2
+158,Gamberi,Melanzane,1
+159,Gamberi,Noci,1
+160,Gamberi,Olive,2
+161,Gamberi,Parmigiano reggiano,-3
+162,Gamberi,Patate,2
+163,Gamberi,Pecorino romano,-3
+164,Gamberi,Pepe,2
+165,Gamberi,Peperoncino,2
+166,Gamberi,Pinoli,-1
+167,Gamberi,Pomodoro,2
+168,Gamberi,Prezzemolo,2
+169,Gamberi,Sarde,2
+170,Gamberi,Uova,-2
+171,Gamberi,Vongole,2
+172,Gamberi,Zucchine,2
+173,Gorgonzola,Gorgonzola,0
+174,Gorgonzola,Limone,-2
+175,Gorgonzola,Melanzane,-1
+176,Gorgonzola,Noci,2
+177,Gorgonzola,Olive,1
+178,Gorgonzola,Parmigiano reggiano,2
+179,Gorgonzola,Patate,2
+180,Gorgonzola,Pecorino romano,2
+181,Gorgonzola,Pepe,1
+182,Gorgonzola,Peperoncino,2
+183,Gorgonzola,Pinoli,-2
+184,Gorgonzola,Pomodoro,-1
+185,Gorgonzola,Prezzemolo,2
+186,Gorgonzola,Sarde,-3
+187,Gorgonzola,Uova,-1
+188,Gorgonzola,Vongole,-3
+189,Gorgonzola,Zucchine,2
+190,Limone,Limone,0
+191,Limone,Melanzane,2
+192,Limone,Noci,1
+193,Limone,Olive,2
+194,Limone,Parmigiano reggiano,-2
+195,Limone,Patate,2
+196,Limone,Pecorino romano,-2
+197,Limone,Pepe,1
+198,Limone,Peperoncino,1
+199,Limone,Pinoli,1
+200,Limone,Pomodoro,-3
+201,Limone,Prezzemolo,2
+202,Limone,Sarde,2
+203,Limone,Uova,1
+204,Limone,Vongole,2
+205,Limone,Zucchine,2
+206,Melanzane,Melanzane,0
+207,Melanzane,Noci,2
+208,Melanzane,Olive,2
+209,Melanzane,Parmigiano reggiano,2
+210,Melanzane,Patate,2
+211,Melanzane,Pecorino romano,1
+212,Melanzane,Pepe,2
+213,Melanzane,Peperoncino,1
+214,Melanzane,Pinoli,2
+215,Melanzane,Pomodoro,2
+216,Melanzane,Prezzemolo,2
+217,Melanzane,Sarde,-2
+218,Melanzane,Uova,2
+219,Melanzane,Vongole,2
+220,Melanzane,Zucchine,2
+221,Noci,Noci,0
+222,Noci,Olive,2
+223,Noci,Parmigiano reggiano,2
+224,Noci,Patate,2
+225,Noci,Pecorino romano,2
+226,Noci,Pepe,1
+227,Noci,Peperoncino,2
+228,Noci,Pinoli,2
+229,Noci,Pomodoro,2
+230,Noci,Prezzemolo,2
+231,Noci,Sarde,2
+232,Noci,Uova,2
+233,Noci,Vongole,-2
+234,Noci,Zucchine,2
+235,Olive,Olive,0
+236,Olive,Parmigiano reggiano,-1
+237,Olive,Patate,2
+238,Olive,Pecorino romano,-1
+239,Olive,Pepe,2
+240,Olive,Peperoncino,2
+241,Olive,Pinoli,2
+242,Olive,Pomodoro,2
+243,Olive,Prezzemolo,2
+244,Olive,Sarde,-1
+245,Olive,Uova,-1
+246,Olive,Vongole,2
+247,Olive,Zucchine,2
+248,Parmigiano reggiano,Parmigiano reggiano,0
+249,Parmigiano reggiano,Patate,2
+250,Parmigiano reggiano,Pecorino romano,2
+251,Parmigiano reggiano,Pepe,-1
+252,Parmigiano reggiano,Peperoncino,2
+253,Parmigiano reggiano,Pinoli,1
+254,Parmigiano reggiano,Pomodoro,2
+255,Parmigiano reggiano,Prezzemolo,1
+256,Parmigiano reggiano,Sarde,-3
+257,Parmigiano reggiano,Uova,-2
+258,Parmigiano reggiano,Vongole,-3
+259,Parmigiano reggiano,Zucchine,2
+260,Patate,Patate,0
+261,Patate,Pecorino romano,2
+262,Patate,Pepe,2
+263,Patate,Peperoncino,1
+264,Patate,Pinoli,1
+265,Patate,Pomodoro,2
+266,Patate,Prezzemolo,2
+267,Patate,Sarde,-1
+268,Patate,Uova,1
+269,Patate,Vongole,2
+270,Patate,Zucchine,2
+271,Pecorino romano,Pecorino romano,0
+272,Pecorino romano,Pepe,2
+273,Pecorino romano,Peperoncino,2
+274,Pecorino romano,Pinoli,-1
+275,Pecorino romano,Pomodoro,2
+276,Pecorino romano,Prezzemolo,2
+277,Pecorino romano,Sarde,-3
+278,Pecorino romano,Uova,-1
+279,Pecorino romano,Vongole,-3
+280,Pecorino romano,Zucchine,2
+281,Pepe,Pepe,0
+282,Pepe,Peperoncino,1
+283,Pepe,Pinoli,-1
+284,Pepe,Pomodoro,2
+285,Pepe,Prezzemolo,1
+286,Pepe,Sarde,1
+287,Pepe,Uova,-1
+288,Pepe,Vongole,2
+289,Pepe,Zucchine,2
+290,Peperoncino,Peperoncino,0
+291,Peperoncino,Pinoli,-1
+292,Peperoncino,Pomodoro,2
+293,Peperoncino,Prezzemolo,-1
+294,Peperoncino,Sarde,2
+295,Peperoncino,Uova,2
+296,Peperoncino,Vongole,2
+297,Peperoncino,Zucchine,2
+298,Pinoli,Pinoli,0
+299,Pinoli,Pomodoro,2
+300,Pinoli,Prezzemolo,2
+301,Pinoli,Sarde,2
+302,Pinoli,Uova,-1
+303,Pinoli,Vongole,-1
+304,Pinoli,Zucchine,1
+305,Pomodoro,Pomodoro,0
+306,Pomodoro,Prezzemolo,2
+307,Pomodoro,Sarde,2
+308,Pomodoro,Uova,-1
+309,Pomodoro,Vongole,2
+310,Pomodoro,Zucchine,2
+311,Prezzemolo,Prezzemolo,0
+312,Prezzemolo,Sarde,1
+313,Prezzemolo,Uova,1
+314,Prezzemolo,Vongole,1
+315,Prezzemolo,Zucchine,2
+316,Sarde,Sarde,0
+317,Sarde,Uova,-2
+318,Sarde,Vongole,2
+319,Sarde,Zucchine,2
+320,Uova,Uova,0
+321,Uova,Vongole,-2
+322,Uova,Zucchine,2
+323,Vongole,Vongole,0
+324,Vongole,Zucchine,-2
+325,Zucchine,Zucchine,0
