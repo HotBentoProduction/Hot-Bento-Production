@@ -1,11 +1,11 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "CoreMinimal.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "Engine/DataTable.h"
-#include "Synergy_pluginBPLibrary.generated.h"
+#include "Synergy.generated.h"
 
 UENUM(BlueprintType)
 enum class EIngredientType : uint8
@@ -52,11 +52,13 @@ struct FIngredientSynergyRow : public FTableRowBase
 	int32 Score;
 };
 
+/**
+ * 
+ */
 UCLASS()
-class SYNERGY_PLUGIN_API USynergy_pluginLibrary : public UBlueprintFunctionLibrary
+class USynergy : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
-
 public:
 	UFUNCTION(BlueprintCallable, Category = "Synergy")
 	static int32 CalculateSynergyScore(

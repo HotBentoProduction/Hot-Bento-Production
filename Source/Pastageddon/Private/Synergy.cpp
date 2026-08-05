@@ -1,9 +1,9 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Synergy_pluginBPLibrary.h"
-#include "Synergy_plugin.h"
 
-FName USynergy_pluginLibrary::EnumToName(EIngredientType Ingredient)
+#include "Synergy.h"
+
+FName USynergy::EnumToName(EIngredientType Ingredient)
 {
 	const UEnum* EnumObj = StaticEnum<EIngredientType>();
 	if (!EnumObj)
@@ -14,7 +14,7 @@ FName USynergy_pluginLibrary::EnumToName(EIngredientType Ingredient)
 	return FName(*EnumObj->GetNameStringByValue((int64)Ingredient));
 }
 
-int32 USynergy_pluginLibrary::GetPairScoreByName(
+int32 USynergy::GetPairScoreByName(
 	const FName A,
 	const FName B,
 	const UDataTable* SynergyTable)
@@ -46,7 +46,7 @@ int32 USynergy_pluginLibrary::GetPairScoreByName(
 	return 0;
 }
 
-int32 USynergy_pluginLibrary::CalculateSynergyScore(
+int32 USynergy::CalculateSynergyScore(
 	const TArray<EIngredientType>& SelectedIngredients,
 	const UDataTable* SynergyTable)
 {
