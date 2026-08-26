@@ -38,9 +38,13 @@
 #include "ToolMenuMisc.h"
 #endif
 
+#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 6
+#include "EditorModeManager.h"
+#endif
 #include "UObject/Linker.h"
 
 static const FName GitSourceControlMenuTabName(TEXT("GitSourceControlMenu"));
+static const FName LevelEditorName(TEXT("LevelEditor"));
 
 #define LOCTEXT_NAMESPACE "GitSourceControl"
 
@@ -49,7 +53,7 @@ TWeakPtr<SNotificationItem> FGitSourceControlMenu::OperationInProgressNotificati
 void FGitSourceControlMenu::Register()
 {
 #if ENGINE_MAJOR_VERSION >= 5
-	FToolMenuOwnerScoped SourceControlMenuOwner("GitSourceControlMenu");
+    FToolMenuOwnerScoped SourceControlMenuOwner( GitSourceControlMenuTabName );
 	if (UToolMenus* ToolMenus = UToolMenus::Get())
 	{
 		UToolMenu* SourceControlMenu = ToolMenus->ExtendMenu("StatusBar.ToolBar.SourceControl");
@@ -59,7 +63,7 @@ void FGitSourceControlMenu::Register()
 	}
 #else
 	// Register the extension with the level editor
-	FLevelEditorModule* LevelEditorModule = FModuleManager::GetModulePtr<FLevelEditorModule>(TEXT("LevelEditor"));
+    FLevelEditorModule * LevelEditorModule = FModuleManager::GetModulePtr< FLevelEditorModule >( LevelEditorName );
 	if (LevelEditorModule)
 	{
 		FLevelEditorModule::FLevelEditorMenuExtender ViewMenuExtender = FLevelEditorModule::FLevelEditorMenuExtender::CreateRaw(this, &FGitSourceControlMenu::OnExtendLevelEditorViewMenu);
@@ -79,7 +83,7 @@ void FGitSourceControlMenu::Unregister()
 	}
 #else
 	// Unregister the level editor extensions
-	FLevelEditorModule* LevelEditorModule = FModuleManager::GetModulePtr<FLevelEditorModule>("LevelEditor");
+    FLevelEditorModule * LevelEditorModule = FModuleManager::GetModulePtr< FLevelEditorModule >( LevelEditorName );
 	if (LevelEditorModule)
 	{
 		LevelEditorModule->GetAllLevelEditorToolbarSourceControlMenuExtenders().RemoveAll([=](const FLevelEditorModule::FLevelEditorMenuExtender& Extender) { return Extender.GetHandle() == ViewMenuExtenderHandle; });
@@ -91,6 +95,17 @@ bool FGitSourceControlMenu::HaveRemoteUrl() const
 {
 	const FGitSourceControlModule& GitSourceControl = FGitSourceControlModule::Get();
 	return !GitSourceControl.GetProvider().GetRemoteUrl().IsEmpty();
+}
+
+bool FGitSourceControlMenu::CanCommit() const
+{
+	// The 'Submit Content' operation could lead to a world reload (in UEFN) that takes the user out of their selected editor mode.
+	// Piggy back on the 'CanAutoSave' functionality to determine if now is a good time to trigger a 'Submit Content' SCC operation.
+#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 6
+	return GLevelEditorModeTools().CanAutoSave() && FSourceControlWindows::CanChoosePackagesToCheckIn();
+#else
+	return true;
+#endif
 }
 
 /// Prompt to save or discard all packages
@@ -290,11 +305,7 @@ void FGitSourceControlMenu::RevertClicked()
 	}
 
 	// make sure we update the SCC status of all packages (this could take a long time, so we will run it as a background task)
-	const TArray<FString> Filenames {
-		FPaths::ConvertRelativePathToFull(FPaths::ProjectContentDir()),
-		FPaths::ConvertRelativePathToFull(FPaths::ProjectConfigDir()),
-		FPaths::ConvertRelativePathToFull(FPaths::GetProjectFilePath())
-	};
+	const TArray<FString> Filenames = GitSourceControlUtils::GetSourceControlledAssetPaths();
 
 	ISourceControlProvider& SourceControlProvider = ISourceControlModule::Get().GetProvider();
 	FSourceControlOperationRef Operation = ISourceControlOperation::Create<FUpdateStatus>();
@@ -527,6 +538,24 @@ void FGitSourceControlMenu::AddMenuExtension(FToolMenuSection& Builder)
 void FGitSourceControlMenu::AddMenuExtension(FMenuBuilder& Builder)
 #endif
 {
+	// UE 5.6 doesn't show the Submit Content button if changelists are enabled
+#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 6
+	const FGitSourceControlProvider& Provider = FGitSourceControlModule::Get().GetProvider();
+	if (Provider.UsesChangelists())
+	{
+		Builder.AddMenuEntry(
+			"CommitAndPush",
+			LOCTEXT("GitCommit",				"Submit Content"),
+			LOCTEXT("GitPushTooltip",		"Opens a dialog with check in options for content and levels."),
+			FSlateIcon(FAppStyle::GetAppStyleSetName(), "SourceControl.Actions.Submit"),
+			FUIAction(
+				FExecuteAction::CreateRaw(this, &FGitSourceControlMenu::CommitClicked),
+				FCanExecuteAction::CreateRaw(this, &FGitSourceControlMenu::CanCommit)
+			)
+		);
+	}
+#endif
+	
 	Builder.AddMenuEntry(
 #if ENGINE_MAJOR_VERSION >= 5
 		"GitPush",

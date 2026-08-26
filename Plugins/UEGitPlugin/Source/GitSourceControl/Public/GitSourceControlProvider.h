@@ -43,7 +43,7 @@ struct FGitVersion
 	}
 };
 
-class FGitSourceControlProvider : public ISourceControlProvider
+class GITSOURCECONTROL_API FGitSourceControlProvider final : public ISourceControlProvider
 {
 public:
 	/* ISourceControlProvider implementation */
@@ -91,6 +91,9 @@ public:
 #endif
 	virtual void Tick() override;
 	virtual TArray< TSharedRef<class ISourceControlLabel> > GetLabels( const FString& InMatchingSpec ) const override;
+#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 7
+	virtual bool GetStateBranchAtIndex(int32 BranchIndex, FString& OutBranchName) const override;
+#endif	
 
 #if ENGINE_MAJOR_VERSION >= 5
 	virtual TArray<FSourceControlChangelistRef> GetChangelists( EStateCacheUsage::Type InStateCacheUsage ) override;
@@ -171,8 +174,10 @@ public:
 	/** Helper function used to update state cache */
 	TSharedRef<FGitSourceControlState, ESPMode::ThreadSafe> GetStateInternal(const FString& Filename);
 
+#if ENGINE_MAJOR_VERSION == 5	
 	/** Helper function used to update changelists state cache */
 	TSharedRef<FGitSourceControlChangelistState, ESPMode::ThreadSafe> GetStateInternal(const FGitSourceControlChangelist& InChangelist);
+#endif
 	
 	/**
 	 * Register a worker with the provider.
@@ -278,7 +283,9 @@ private:
 
 	/** State cache */
 	TMap<FString, TSharedRef<class FGitSourceControlState, ESPMode::ThreadSafe> > StateCache;
+#if ENGINE_MAJOR_VERSION == 5
 	TMap<FGitSourceControlChangelist, TSharedRef<class FGitSourceControlChangelistState, ESPMode::ThreadSafe> > ChangelistsStateCache;
+#endif
 
 	/** The currently registered revision control operations */
 	TMap<FName, FGetGitSourceControlWorker> WorkersMap;

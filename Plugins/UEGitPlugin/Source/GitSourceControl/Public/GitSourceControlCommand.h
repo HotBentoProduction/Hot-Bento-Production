@@ -8,6 +8,7 @@
 #include "GitSourceControlChangelist.h"
 #include "ISourceControlProvider.h"
 #include "Misc/IQueuedWork.h"
+#include "Runtime/Launch/Resources/Version.h"
 
 /** Accumulated error and info messages for a revision control operation.  */
 struct FGitSourceControlResultInfo
@@ -40,7 +41,7 @@ public:
 	 *  Modify the repo root if all selected files are in a plugin subfolder, and the plugin subfolder is a git repo
 	 *  This supports the case where each plugin is a sub module
 	 */
-	void UpdateRepositoryRootIfSubmodule(const TArray<FString>& AbsoluteFilePaths);
+	void UpdateRepositoryRootIfSubmodule(TArray<FString>& AbsoluteFilePaths);
 
 	/**
 	 * This is where the real thread work is done. All work that is done for
@@ -117,8 +118,10 @@ public:
 	/** Files to perform this operation on */
 	TArray<FString> Files;
 
-	/** Changelist to perform this operation on */
-	FGitSourceControlChangelist Changelist;
+#if ENGINE_MAJOR_VERSION == 5
+    /** Changelist to perform this operation on */
+    FGitSourceControlChangelist Changelist;
+#endif
 
 	/** Potential error, warning and info message storage */
 	FGitSourceControlResultInfo ResultInfo;

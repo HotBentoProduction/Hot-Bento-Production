@@ -125,16 +125,17 @@ struct FGitState
 	FString HeadBranch;
 };
 
-class FGitSourceControlState : public ISourceControlState
+class GITSOURCECONTROL_API FGitSourceControlState : public ISourceControlState
 {
 public:
-	FGitSourceControlState(const FString &InLocalFilename)
-		: LocalFilename(InLocalFilename)
-		, TimeStamp(0)
-		, HeadAction(TEXT("Changed"))
-		, HeadCommit(TEXT("Unknown"))
-	{
-	}
+    explicit FGitSourceControlState(const FString &InLocalFilename) :
+        LocalFilename( InLocalFilename ),
+        TimeStamp( 0 ),
+        HeadAction( TEXT( "Changed" ) ),
+        HeadModTime( 0 ),
+        HeadCommit( TEXT( "Unknown" ) )
+    {
+    }
 
 	/** ISourceControlState interface */
 	virtual int32 GetHistorySize() const override;
@@ -204,7 +205,9 @@ public:
 	/** Status of the file */
 	FGitState State;
 
+#if ENGINE_MAJOR_VERSION == 5
 	FGitSourceControlChangelist Changelist;
+#endif
 
 	/** The timestamp of the last update */
 	FDateTime TimeStamp;

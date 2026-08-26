@@ -16,7 +16,7 @@ static const FString SettingsSection = TEXT("GitSourceControl.GitSourceControlSe
 
 }
 
-const FString FGitSourceControlSettings::GetBinaryPath() const
+const FString & FGitSourceControlSettings::GetBinaryPath() const
 {
 	FScopeLock ScopeLock(&CriticalSection);
 	return BinaryPath; // Return a copy to be thread-safe
@@ -83,4 +83,5 @@ void FGitSourceControlSettings::SaveSettings() const
 	GConfig->SetString(*GitSettingsConstants::SettingsSection, TEXT("BinaryPath"), *BinaryPath, IniFile);
 	GConfig->SetBool(*GitSettingsConstants::SettingsSection, TEXT("UsingGitLfsLocking"), bUsingGitLfsLocking, IniFile);
 	GConfig->SetString(*GitSettingsConstants::SettingsSection, TEXT("LfsUserName"), *LfsUserName, IniFile);
+	GConfig->Flush(false, IniFile);
 }
