@@ -2133,6 +2133,7 @@ bool RunGetHistory(const FString& InPathToGitBinary, const FString& InRepository
 	{
 		TArray<FString> Results;
 		TArray<FString> Parameters;
+		Parameters.Add(TEXT("--no-color"));
 		Parameters.Add(TEXT("--follow")); // follow file renames
 		Parameters.Add(TEXT("--date=raw"));
 		Parameters.Add(TEXT("--name-status")); // relative filename at this revision, preceded by a status character
@@ -2162,7 +2163,7 @@ bool RunGetHistory(const FString& InPathToGitBinary, const FString& InRepository
 		TArray<FString> Results;
 		TArray<FString> Parameters;
 		Parameters.Add(TEXT("--long")); // Show object size of blob (file) entries.
-		Parameters.Add(Revision->GetRevision());
+		Parameters.Add(Revision->CommitId);
 		TArray<FString> Files;
 		Files.Add(*Revision->GetFilename());
 		bResults &= RunCommand(TEXT("ls-tree"), InPathToGitBinary, InRepositoryRoot, Parameters, Files, Results, OutErrorMessages);
